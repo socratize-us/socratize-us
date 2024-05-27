@@ -9,15 +9,25 @@ body {
     background: #f4f4f4;
 }
 
+.tile-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 .tile {
-    display: inline-block;  /* Or 'block' if you want one tile per row */
+    display: block;  /* Or 'block' if you want one tile per row */
     background-size: cover; /* Ensures the background image covers the tile */
+    background-position: center; /* Centers the background image */
+    justify-content: center;
     width: 20%;           /* Set the width as needed */
     height: 20%;          /* Set the height as needed */
     position: relative;     /* Needed for absolute positioning of label inside */
+    margin-bottom: 10px; /* Adds some space between the tiles */
     margin: 10px;
+    align-items: center;
 }
+
 
 .tile-label {
     position: absolute;
@@ -26,7 +36,10 @@ body {
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the label */
     color: white;           /* Text color */
     text-align: center;     /* Centers the text horizontally */
-    padding: 10px 0;        /* Padding for better visual spacing */
+    padding: 10px;        /* Padding for better visual spacing */
     font-size: 30px; /* Larger font size for better readability */
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
 }
+
+
 
