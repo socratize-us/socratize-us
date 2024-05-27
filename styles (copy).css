@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400vh;
+    background: #f4f4f4;
+}
+
+
+.tile {
+    width: 41%; /* Adjust the width as needed for column layout */
+    height: 100%; /* Adjust the height based on row layout */
+    margin: 10px;
+    background-size: contain; /* Ensures the entire image is visible within tile */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative; /* Required for absolute positioning of children */
+    overflow: hidden; /* Prevents any overflow from the tile */
+}
+
+.tile-label {
+    position: absolute; /* Ensures label covers the image */
+    width: calc(100% - 20px); /* Adjusts for padding, making label span width of the tile */
+    left: 0px; /* Aligns label to the horizontal center of the tile */
+    top: 1px; /* Aligns the label at the bottom of the tile */
+    background-color: white; /* Solid white background */
+    color: darkblue; /* Dark blue text */
+    padding: 10px; /* Increased padding for better visibility */
+    font-size: 24px; /* Larger font size for better readability */
+    text-transform: uppercase;
+    text-align: center; /* Centers the text within the tile */
+}
+
+.tile-label1 {
+    position: absolute; /* Ensures label covers the image */
+    width: calc(100% - 20px); /* Adjusts for padding, making label span width of the tile */
+    left: 0px; /* Aligns label to the horizontal center of the tile */
+    bottom: -30px; /* Aligns the label at the bottom of the tile */
+    background-color: darkblue; /* Solid white background */
+    color: white; /* Dark blue text */
+    padding: 10px; /* Increased padding for better visibility */
+    font-size: 40px; /* Larger font size for better readability */
+    text-transform: uppercase;
+    text-align: center; /* Centers the text within the tile */
+}
