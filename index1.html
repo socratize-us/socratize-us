@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FAQ Section</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<!-- FAQs Section -->
+<div class="w3-container w3-padding-32" id="FAQs">
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style="font-size: 40px;">FAQs</h3>
+  <div id="faqContent" style="font-size: 18px;">
+    <!-- FAQs will be loaded here -->
+  </div>
+</div>
+
+<script>
+// Function to load FAQs from a text file
+function loadFAQs() {
+  fetch('faqs.txt')
+    .then(response => response.text())
+    .then(data => {
+      const faqContent = document.getElementById('faqContent');
+      const faqs = data.split('\n\n'); // Assuming each FAQ is separated by two newlines
+
+      faqs.forEach(faq => {
+        const faqParts = faq.split('\n'); // Assuming each FAQ question and answer are on separate lines
+        const question = faqParts[0];
+        const answer = faqParts[1];
+
+        const faqDiv = document.createElement('div');
+        faqDiv.className = 'w3-panel w3-leftbar w3-light-grey';
+        
+        const questionP = document.createElement('p');
+        questionP.innerHTML = `<strong>${question}</strong>`;
+        
+        const answerP = document.createElement('p');
+        answerP.textContent = answer;
+
+        faqDiv.appendChild(questionP);
+        faqDiv.appendChild(answerP);
+        faqContent.appendChild(faqDiv);
+      });
+    })
+    .catch(error => console.error('Error loading FAQs:', error));
+}
+
+// Load FAQs on page load
+document.addEventListener('DOMContentLoaded', loadFAQs);
+</script>
+
+</body>
+</html>
+
